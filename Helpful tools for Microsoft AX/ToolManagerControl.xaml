@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="Helpful_Tools_for_Microsoft_AX.ToolManagerControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vsshell="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.15.0"
+             Background="#FFE4E4E4"
+             Foreground="#FFE4E4E4"
+             mc:Ignorable="d"
+             Height="auto" Width="auto"
+             Name="MyToolWindow">
+    <Grid Background="#FFE4E4E4" Height="100" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Label Content="Выберите утилиту:" Margin="93,20,93,0" VerticalAlignment="Top"/>
+        <Button Name="CallLabelTranslator" Content="Label translator" HorizontalAlignment="Left" Margin="20,51,0,0" VerticalAlignment="Top" Width="107" Click="CallLabelTranslator_Click"/>
+        <Button Name="CallLabelSearch" Content="Label Search" Margin="190,50,20,29" Click="CallLabelSearch_Click"/>
+    </Grid>
+</UserControl>

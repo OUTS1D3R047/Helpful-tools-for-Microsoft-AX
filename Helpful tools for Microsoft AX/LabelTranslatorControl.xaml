@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="Helpful_Tools_for_Microsoft_AX.LabelTranslatorControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vsshell="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.15.0"
+             Background="#FFE4E4E4"
+             Foreground="#FFE4E4E4"
+             mc:Ignorable="d"
+             Height="auto" Width="auto"
+             Name="HTLabelTranslator">
+    <Grid Background="#FFE4E4E4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="850" Height="600">
+        <Label Name="ExplanationRu" Grid.Row="0" Content="Путь к файлу на русском языке:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <ComboBox Name="ShowFilePathRu" HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" VerticalAlignment="Top" Width="314" VerticalContentAlignment="Center" Grid.ColumnSpan="2" Loaded="RecentFiles" SelectionChanged="recentFiles_SelectionChanged"/>
+        <Button Name="OpenFileButtonRu" Click="OpenFileButtonRu_Click" Content="Открыть" HorizontalAlignment="Left" Margin="264,13,0,0" VerticalAlignment="Top" Width="60" Height="23"/>
+        <Button Name="OpenFileButtonEn" Content="Открыть" Margin="750,13,40,0" VerticalAlignment="Top" Height="23" Click="OpenFileButtonEn_Click"/>
+        <Label Name="ExplanationEn" Grid.Row="0" Content="Путь к файлу на английском языке:" HorizontalAlignment="Left" Margin="496,10,0,0" VerticalAlignment="Top" Width="210"/>
+        <ComboBox Name="ShowFilePathEn" Height="23" Margin="496,41,40,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Loaded="RecentFiles" SelectionChanged="recentFiles_SelectionChanged"/>
+        <Button Name="TranslateButton" Click="TranslateButton_Click" Content="Перевести файл" HorizontalAlignment="Left" Margin="87,417,0,0" VerticalAlignment="Top" Width="160" Height="24"/>
+        <TextBox Name="ShowFileRu" IsReadOnly="True" HorizontalAlignment="Left" Margin="10,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="314" Height="130" Grid.ColumnSpan="2"/>
+        <TextBox Name="ShowFileEn" IsReadOnly="True" HorizontalAlignment="Left" Margin="496,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="314" Height="130"/>
+        <TextBox Name="ShowFileMod" IsReadOnly="True" HorizontalAlignment="Left" Margin="496,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="314" Height="130"/>
+        <Button Name="SaveButton" Click="SaveButton_Click" Content="Сохранить файл" HorizontalAlignment="Left" Margin="574,424,0,0" VerticalAlignment="Top" Width="165"/>
+        <Button Name="FileAdditionalButton" Click="FileAdditionalButton_Click" Content="Сравнить и дополнить" Margin="574,204,116,0" VerticalAlignment="Top" Height="23"/>
+        <TextBox Name="ShowNewLabels" IsReadOnly="True" HorizontalAlignment="Left" Margin="10,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="314" Height="130"/>
+        <Label Content="Новых меток " Margin="366,81,398,496"/>
+        <Label Content="(Введите значение):" Margin="353,104,372,466"/>
+        <TextBox Name="NewLabelsAmount" HorizontalAlignment="Left" Margin="372,136,0,0" Text="0" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Height="20"/>
+        <Label Grid.Row="0" Content="Проверьте новые метки:" HorizontalAlignment="Left" Margin="10,249,0,0" VerticalAlignment="Top"/>
+        <Label Grid.Row="0" Content="Результат:" HorizontalAlignment="Left" Margin="496,249,0,0" VerticalAlignment="Top"/>
+        <ComboBox Name="ChooseLang" Margin="372,221,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70" Height="20" Loaded="ChooseLang_Loaded" SelectionChanged="ChooseLang_SelectionChanged"/>
+        <Label Content="Язык перевода:" Margin="358,194,394,379"/>
+
+    </Grid>
+</UserControl>

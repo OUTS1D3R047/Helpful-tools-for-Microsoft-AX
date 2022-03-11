@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="Helpful_Tools_for_Microsoft_AX.LabelSearchControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vsshell="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.15.0"
+             Background="#FFE4E4E4"
+             Foreground="#FFE4E4E4"
+             mc:Ignorable="d"
+             Height="auto" Width="auto"
+             Name="HTLabelSearch">
+    <Grid Background="#FFE4E4E4" Height="450" Width="800" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Label Name="Search_text" Content="Поиск:" HorizontalAlignment="Left" Margin="57,85,0,0" VerticalAlignment="Top" Height="26" />
+        <TextBox Name="keyWord" HorizontalAlignment="Left" Height="24" Margin="109,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="440" IsUndoEnabled="True" KeyDown="keyWord_KeyDown"/>
+        <Button Name="searchButton" Content="Искать!" HorizontalAlignment="Left" Margin="549,85,0,0" VerticalAlignment="Top" Width="59" Height="24" BorderBrush="#FF707070" Foreground="Black" Click="searchButton_Click" Background="#FFDDDDDD">
+
+        </Button>
+        <DataGrid Name="labelsGrid" Margin="10,144,10,10" Loaded="grid_Loaded" AutoGenerateColumns="False" ItemsSource="{Binding}" ColumnWidth="*">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Меточный файл" Width="150" Binding="{Binding Path=labelFile}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Язык" Width="40" Binding="{Binding Path=lang}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="ID метки" Width="300" Binding="{Binding Path=labelID}"/>
+                <DataGridTextColumn Header="Метка" Width="150" Binding="{Binding Path=label}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Описание" Binding="{Binding Path=desc}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Label Name="searchPath" Content="Область поиска:" HorizontalAlignment="Left" Margin="60,46,0,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.761,0.078" />
+        <Button x:Name="SearchPathButton" Content="Открыть" HorizontalAlignment="Left" Margin="164,46,0,0" VerticalAlignment="Top" Width="60" Click="SearchPathButton_Click" Height="23"/>
+        <Label x:Name="labelLanhuage" Content="Язык:&#xD;&#xA;" HorizontalAlignment="Left" Margin="60,114,0,0" VerticalAlignment="Top" Width="50" Height="25"/>
+        <ComboBox x:Name="chooseLang" HorizontalAlignment="Left" Margin="110,117,0,0" VerticalAlignment="Top" Width="70" Loaded="chooseLang_Loaded" SelectionChanged="chooseLang_SelectionChanged" />
+        <ComboBox x:Name="recentFiles" HorizontalAlignment="Left" Margin="243,47,0,0" VerticalAlignment="Top" Width="306" Height="22" Loaded="recentFiles_Loaded" SelectionChanged="recentFiles_SelectionChanged"/>
+        <Grid>
+            <Label x:Name="lFilter" Content="Фильтр поиска:&#xD;&#xA;" HorizontalAlignment="Left" Margin="655,33,0,0" VerticalAlignment="Top" Width="98" Height="26"/>
+            <RadioButton x:Name="textFilter" Content="По тексту" HorizontalAlignment="Left" Margin="655,64,0,0" VerticalAlignment="Top" IsChecked="True"/>
+            <RadioButton x:Name="exactFilter" Content="Точное совпадение" HorizontalAlignment="Left" Margin="655,90,0,0" VerticalAlignment="Top"/>
+        </Grid>
+    </Grid>
+
+</UserControl>
